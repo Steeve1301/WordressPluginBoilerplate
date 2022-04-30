@@ -1,0 +1,31 @@
+{
+    "name": "steeve/belead-formations",
+    "description": "Wordpress Plugin for CQHN - Formations",
+    "type": "project",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "BeleadFormation\\Classes\\": "/wp-content/plugins/wordpress_plugin_boilerplate/app/Classes/",
+            "BeleadFormation\\Controllers\\": "/wp-content/plugins/wordpress_plugin_boilerplate/app/Controllers/",
+            "BeleadFormation\\Templates\\" : "/wp-content/plugins/wordpress_plugin_boilerplate/app/Templates/",
+            "BeleadFormation\\Helpers\\" : "/wp-content/plugins/wordpress_plugin_boilerplate/app/Helpers",
+            "BeleadFormation\\Databases\\" : "/wp-content/plugins/wordpress_plugin_boilerplate/databases/Migrations"
+        },
+        "classmap": [
+            "app/Classes/",
+            "app/Controllers/",
+            "app/Templates/",
+            "app/Helpers/",
+            "databases/Migrations"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Steeve Henrard",
+            "email": "steeve@belead.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^8.83"
+    }
+}
