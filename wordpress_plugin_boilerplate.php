@@ -5,8 +5,7 @@ namespace MyPlugin;
  * Description: Boilerplate for wordpress plugin
  * Author: Steeve Henrard
  */
-use BeleadFormation\Classes\Formation;
-use BeleadFormation\Templates\PageTemplater;
+use MyPlugin\Templates\PageTemplater;
 
 if( ! defined( 'ABSPATH' ) ) {
     return;
@@ -43,11 +42,11 @@ class MyPlugin {
     }
 
     public static function migrate() {
-        $files = array_slice(scandir(plugin_dir_path(BeleadFormation::getFilePath()) . '/databases/Migrations'), 2);
+        $files = array_slice(scandir(plugin_dir_path(MyPlugin::getFilePath()) . '/databases/Migrations'), 2);
 
         foreach($files as $file) {
             try {
-                $class_name = 'BeleadFormation\Databases\\' . str_replace('.php', '', $file);
+                $class_name = 'MyPlugin\Databases\\' . str_replace('.php', '', $file);
                 if(class_exists($class_name)) {
                     $class_name::up();
                 }
@@ -79,10 +78,10 @@ class MyPlugin {
 }
 
 function load_plugin() {
-    $plugin = new BeleadFormation();
+    $plugin = new MyPlugin();
     $plugin->load();
 }
-add_action('plugins_loaded', 'BeleadFormation\load_plugin');
-register_activation_hook(__FILE__, [BeleadFormation::class, 'migrate'] );
-add_filter( 'document_title_parts', array(BeleadFormation::class, 'set_custom_title'), 10 );
+add_action('plugins_loaded', 'MyPlugin\load_plugin');
+register_activation_hook(__FILE__, [MyPlugin::class, 'migrate'] );
+add_filter( 'document_title_parts', array(MyPlugin::class, 'set_custom_title'), 10 );
 add_action( 'plugins_loaded', array( PageTemplater::class, 'get_instance' ) );

@@ -1,6 +1,6 @@
 {
-    "name": "steeve/belead-formations",
-    "description": "Wordpress Plugin for CQHN - Formations",
+    "name": "steeve/wordpress_plugin_boilerplate",
+    "description": "Wordpress Plugin Boileplate",
     "type": "project",
     "license": "proprietary",
     "autoload": {
