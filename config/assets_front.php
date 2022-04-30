@@ -3,9 +3,9 @@
  * Register assets and config variables
  */
 
-use BeleadFormation\BeleadFormation;
+use MyPlugin\MyPlugin;
 
-wp_enqueue_style( 'main', plugin_dir_url(BeleadFormation::getFilePath()). 'public/css/style.css' );
+wp_enqueue_style( 'main', plugin_dir_url(MyPlugin::getFilePath()). 'public/css/style.css' );
 
 
 
